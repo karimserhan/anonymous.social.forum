@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="g:\hackathon\Project\WebProject\WebProject\env"
+VIRTUAL_ENV="G:\hackathon\Project\anonymous.social.forum\WebProject\WebProject\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

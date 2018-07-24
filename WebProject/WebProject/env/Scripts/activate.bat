@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=g:\hackathon\Project\WebProject\WebProject\env"
+set "VIRTUAL_ENV=G:\hackathon\Project\anonymous.social.forum\WebProject\WebProject\env"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"

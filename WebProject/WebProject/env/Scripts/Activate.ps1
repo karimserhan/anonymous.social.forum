@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="g:\hackathon\Project\WebProject\WebProject\env"
+$env:VIRTUAL_ENV="G:\hackathon\Project\anonymous.social.forum\WebProject\WebProject\env"
 
 if (! $env:VIRTUAL_ENV_DISABLE_PROMPT) {
     # Set the prompt to include the env name

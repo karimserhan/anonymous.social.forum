@@ -3,6 +3,8 @@ The flask application package.
 """
 
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from WebProject.config import Config
 import logging
 
@@ -21,6 +23,9 @@ app.logger.setLevel(logging.DEBUG)
 
 app.config.from_object(Config)
 
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
 #app.debug = True
 
-import WebProject.views
+import WebProject.views, WebProject.models
