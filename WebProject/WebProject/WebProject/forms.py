@@ -3,10 +3,11 @@ Define the forms
 """
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Length, EqualTo, Email
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import DataRequired, Length, EqualTo, Email, ValidationError
+from WebProject.models import User
 
-class RegisterForm(FlaskForm):
+class RegistrationForm(FlaskForm):
     username = StringField(
         'Username', validators=[DataRequired(), Length(min=6, max=25)]
     )
@@ -17,13 +18,22 @@ class RegisterForm(FlaskForm):
         'Password', validators=[DataRequired(), Length(min=6, max=40)]
     )
     confirm = PasswordField(
-        'Repeat Password',
-        [DataRequired(),
-        EqualTo('password', message='Passwords must match')]
+        'Repeat Password', [DataRequired(), EqualTo('password', message='Passwords must match')]
     )
     submit = SubmitField('Register')
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different username.')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different email address.')
 
 class LoginForm(FlaskForm):
     username = StringField('Username', [DataRequired(), Length(min=6, max=25)])
     password = PasswordField('Password', [DataRequired(), Length(min=6, max=40)])
-    submit = SubmitField('Login')
+    remember_me = BooleanField('Remember Me')
+    submit = SubmitField('Login') 

@@ -29,6 +29,8 @@
     <span style="color: red;">{{ error }}</span>
     {% endfor %}
 
-    {{ form.submit(class_='btn btn-primary btn-lg btn-block', placeholder = form.submit.label.text) }}
+    {{ form.submit(class_='btn btn-primary btn-lg btn-block space-bottom', placeholder = form.submit.label.text) }}
+
+    <p>Already registered? <a href="{{ url_for('login') }}">Click to Sign in!</a></p>
 </form>
 {% endblock %}
