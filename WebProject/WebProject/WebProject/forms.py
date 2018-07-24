@@ -26,4 +26,4 @@ class RegisterForm(FlaskForm):
 class LoginForm(FlaskForm):
     username = StringField('Username', [DataRequired(), Length(min=6, max=25)])
     password = PasswordField('Password', [DataRequired(), Length(min=6, max=40)])
-    submit = SubmitField('Register')
+    submit = SubmitField('Login')

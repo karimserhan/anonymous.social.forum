@@ -24,8 +24,7 @@ def contact():
     return render_template(
         'contact.html',
         title='Contact',
-        year=datetime.now().year,
-        message='Your contact page.'
+        year=datetime.now().year
     )
 
 @app.route('/about')

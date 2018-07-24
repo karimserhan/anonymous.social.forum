@@ -5,7 +5,7 @@
 <div class="jumbotron">
     <h1>AnonyMatch</h1>
     <p class="lead">AnonyMatch is an online forum to discuss just about anything and connect with other people that share similar interests.</p>
-    <p><a href="http://notyetimplemented.com/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <p><a href="{{ url_for('about') }}" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
 
 <div class="row">
@@ -15,7 +15,7 @@
             When you first sign up with an AnonyMatch account, your profile will be hidden from all other users.
             You will be able to access the anonymous forum by viewing posts and replying to users anonymously.
         </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Sign up &raquo;</a></p>
+        <p><a class="btn btn-default" href="{{ url_for('register') }}">Sign up &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Engage</h2>
@@ -29,7 +29,7 @@
         <p>We will regularly suggest profiles for you to unlock based on similar interest and compatibility score.
         Likewise, your profile will be suggested to the users we find compatible. If there's a match, you will
         be able to view the full profile and connect with .</p>
-        <p><a class="btn btn-default" href="http://notyetimplemented.com">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="{{ url_for('home') }}">Learn more &raquo;</a></p>
     </div>
 </div>
 

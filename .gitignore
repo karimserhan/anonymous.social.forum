@@ -297,6 +297,9 @@ paket-files/
 __pycache__/
 *.pyc
 
+# Python virtual environment for this project
+WebProject/WebProject/env/**
+
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config
