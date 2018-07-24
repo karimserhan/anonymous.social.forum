@@ -31,6 +31,7 @@
     <Compile Include="runserver.py" />
     <Compile Include="WebProject\config.py" />
     <Compile Include="WebProject\forms.py" />
+    <Compile Include="WebProject\models.py" />
     <Compile Include="WebProject\__init__.py" />
     <Compile Include="WebProject\views.py" />
   </ItemGroup>
