@@ -43,7 +43,7 @@
     <Folder Include="WebProject\templates\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FlaskWebServer - Web Deploy.pubxml" />
+    <None Include="deploy.pubxml" />
     <Content Include="requirements.txt" />
     <Content Include="web.config" />
     <Content Include="WebProject\static\content\bootstrap.css" />
