@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<form method="post" class="form center-form">
+    {{ form.hidden_tag() }}
+    <h3 class="form-heading">Register <a href="{{ url_for('home') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+    {{ form.username(class_ = 'form-control first-input space-bottom', placeholder = form.username.label.text, required = true, autofocus = true) }}
+    {% for error in form.username.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    {{ form.email(class_ = 'form-control space-bottom', placeholder = form.email.label.text, required = true) }}
+    {% for error in form.email.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    {{ form.password(class_ = 'form-control space-bottom', placeholder = form.password.label.text, required = true) }}
+    {% for error in form.password.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    {{ form.confirm(class_ = 'form-control last-input space-bottom', placeholder = form.confirm.label.text, required = true) }}
+    {% for error in form.confirm.errors %}
+    <span style="color: red;">{{ error }}</span>
+    {% endfor %}
+
+    {{ form.submit(class_='btn btn-primary btn-lg btn-block', placeholder = form.submit.label.text) }}
+</form>
+{% endblock %}
