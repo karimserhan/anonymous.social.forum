@@ -43,7 +43,7 @@
     <Folder Include="WebProject\templates\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="deploy.pubxml" />
+    <None Include="anonymatch.webdeploy.pubxml" />
     <Content Include="requirements.txt" />
     <Content Include="web.config" />
     <Content Include="WebProject\static\content\bootstrap.css" />
