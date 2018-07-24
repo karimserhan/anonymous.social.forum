@@ -5,6 +5,7 @@ Routes and views for the flask application.
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
+from werkzeug.urls import url_parse
 import logging
 from WebProject import app, db
 from WebProject.forms import LoginForm, RegistrationForm
@@ -97,3 +98,63 @@ def feed():
         'feed.html',
         title='Home Page',
         year=datetime.now().year)
+
+@app.route('/user/<userid>')
+@login_required
+def user(userid):
+    """Renders the user page."""
+    user = User.query.filter_by(id=userid).first_or_404()
+    # TODO: authorization
+    return render_template(
+        'user_overview.html',
+        title='Profile',
+        year=datetime.now().year,
+        user=user)
+
+@app.route('/activity/<userid>')
+@login_required
+def activity(userid):
+    """Renders the user page."""
+    user = User.query.filter_by(id=userid).first_or_404()
+    # TODO: authorization
+    return render_template(
+        'user_activity.html',
+        title='Activity',
+        year=datetime.now().year,
+        user=user)
+
+@app.route('/conversation/<userid>')
+@login_required
+def conversation(userid):
+    """Renders the user page."""
+    user = User.query.filter_by(id=userid).first_or_404()
+    # TODO: make sure they match first before viewing profiles!
+    return render_template(
+        'user_conversation.html',
+        title='Conversation',
+        year=datetime.now().year,
+        user=user)
+
+@app.route('/matches/<userid>')
+@login_required
+def matches(userid):
+    """Renders the user page."""
+    user = User.query.filter_by(id=userid).first_or_404()
+    # TODO: authorization
+    return render_template(
+        'user_matches.html',
+        title='Matches',
+        year=datetime.now().year,
+        user=user)
+
+@app.route('/editprofile/<userid>')
+@login_required
+def editprofile(userid):
+    """Renders the user page."""
+    user = User.query.filter_by(id=userid).first_or_404()
+    # TODO: authorization
+    return render_template(
+        'user_edit.html',
+        title='Edit Profile',
+        year=datetime.now().year,
+        user=user)

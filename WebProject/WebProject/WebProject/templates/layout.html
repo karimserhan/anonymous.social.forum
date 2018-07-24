@@ -6,6 +6,7 @@
     <title>{{ title }} - AnonyMatch</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    {% block styles %}{% endblock %}
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
 
@@ -22,10 +23,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    {% if current_user.is_anonymous %}
                     <li><a href="{{ url_for('home') }}">Home</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('feed') }}">Feed</a></li>
+                    <li><a href="{{ url_for('user', userid=current_user.id) }}">Profile</a></li>
+                    <li><a href="{{ url_for('matches', userid=current_user.id) }}">Matches</a></li>
+                    {% endif %}
                     <!--TODO: no about page for now-->
                     <!--<li><a href="{{ url_for('about') }}">About</a></li>-->
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="{{ url_for('contact') }}">Feedback</a></li>
                 </ul>
                 <ul class="nav navbar-nav pull-right">
                     {% if current_user.is_anonymous %}

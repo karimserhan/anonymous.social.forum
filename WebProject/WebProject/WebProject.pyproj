@@ -49,6 +49,7 @@
     <Content Include="web.config" />
     <Content Include="WebProject\static\content\bootstrap.css" />
     <Content Include="WebProject\static\content\bootstrap.min.css" />
+    <Content Include="WebProject\static\content\profile.css" />
     <Content Include="WebProject\static\content\site.css" />
     <Content Include="WebProject\static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="WebProject\static\fonts\glyphicons-halflings-regular.svg" />
@@ -70,6 +71,13 @@
     <Content Include="WebProject\static\scripts\respond.min.js" />
     <Content Include="WebProject\static\scripts\_references.js" />
     <Content Include="WebProject\static\web.config" />
+    <Content Include="WebProject\templates\user_conversation.html" />
+    <Content Include="WebProject\templates\user_activity.html" />
+    <Content Include="WebProject\templates\user_matches.html" />
+    <Content Include="WebProject\templates\user_overview.html" />
+    <Content Include="WebProject\templates\user_edit.html" />
+    <Content Include="WebProject\templates\_create_post.html" />
+    <Content Include="WebProject\templates\user_profile_layout.html" />
     <Content Include="WebProject\templates\feed.html" />
     <Content Include="WebProject\templates\about.html" />
     <Content Include="WebProject\templates\contact.html" />
