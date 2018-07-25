@@ -41,6 +41,10 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+.set-form-width {
+    width: 320px;
+}
+
 .center-form {
     margin: 0 auto;
     width: 320px;
@@ -48,4 +52,9 @@ input[type="checkbox"].input-validation-error {
 
 .space-bottom {
     margin-bottom: 10px;
+}
+
+.fix-form-label {
+    margin-bottom: 0;
+    margin-top: 7px;
 }

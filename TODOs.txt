@@ -1,3 +1,5 @@
 - pagination
 - user "member since"
 - Authorization
+- Expose gender/interests
+- User profile picture

@@ -2,5 +2,67 @@
 {% set active_page = "edit" %}
 
 {% block profile_content %}
-Edit!!
+<form>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label fix-form-label">Email</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">{{ user.email }}</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label fix-form-label">Username</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" value="{{ user.username }}" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label fix-form-label">About</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" rows="5">{% if user.about_me is not none %}{{ user.about_me }}{% endif %}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <a href="#" id="changePassword">Change</a>
+            <input type="hidden" value="0" id="passwordChanged">
+            <input type="password" class="form-control space-bottom hidden" id="passwordTb" placeholder="Password" />
+            <input type="password" class="form-control space-bottom hidden" id="confirmPasswordTb" placeholder="Confirm Password" />
+            <a href="#" class="hidden" id="cancelChangePassword">Cancel</a>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+
+    <hr />
+    <p>
+        Coming soon:
+        <ul>
+            <li>Gender/gender interests</li>
+            <li>Upload profile pics</li>
+        </ul>
+    </p>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $("#changePassword").click(function () {
+        $("#changePassword").addClass('hidden');
+        $("#passwordTb").removeClass('hidden');
+        $("#confirmPasswordTb").removeClass('hidden');
+        $("#cancelChangePassword").removeClass('hidden');
+        $("#passwordChanged").val(1);
+    });
+    $("#cancelChangePassword").click(function () {
+        $("#changePassword").removeClass('hidden');
+        $("#passwordTb").addClass('hidden');
+        $("#confirmPasswordTb").addClass('hidden');
+        $("#confirmPasswordTb").val('');
+        $("#passwordTb").val('');
+        $("#cancelChangePassword").addClass('hidden');
+        $("#passwordChanged").val(0);
+    });
+</script>
 {% endblock %}
